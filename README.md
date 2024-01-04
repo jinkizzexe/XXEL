@@ -99,7 +99,7 @@ For our bot support, Do email [ <b>akd.bd880@gmail.com</b> ] or join our Whatsap
  <a href="https://chat.whatsapp.com/HGnDq9xzEfDCl5Irj80QA3"><img alt="WhatsApp" src="https://img.shields.io/badge/-Whatsapp%20Group-lime?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
  <h3 align="center">Contact Me:</h3>
 <p align="center">
-<a href="wa.me/8801975492880" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/whatsapp.svg" alt="kyrie_baran" height="30" width="40" /></a>
+<a href="https://wa.me/8801975492880" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/whatsapp.svg" alt="kyrie_baran" height="30" width="40" /></a>
 <a href="https://instagram.com/sla.sher_" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="kyrie.baran" height="30" width="40" /></a>
 </p>
 
@@ -107,7 +107,7 @@ For our bot support, Do email [ <b>akd.bd880@gmail.com</b> ] or join our Whatsap
 
 </br></br>
 
-<h3 align="left">📑 Special Thanks to:</h3>
+<h3 align="left">📑 Special Thanks to:</h3>
 <p align="left">
 
 
