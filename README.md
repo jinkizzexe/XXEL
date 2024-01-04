@@ -107,7 +107,7 @@ For our bot support, Do email [ <b>akd.bd880@gmail.com</b> ] or join our Whatsap
 
 </br></br>
 
-<h3 align="left">Special Thanks to:</h3>
+<h3 align="left">📑 Special Thanks to:</h3>
 <p align="left">
 
 
