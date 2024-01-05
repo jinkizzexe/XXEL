@@ -45,11 +45,12 @@ Vibranium-Bot- Baileys Multi Device whatsapp bot.
 - Now head towards to <b>heroku</b>
 - Now set <b>application name</b>
 - Now go to <b>Variables</b> 
-and set all the unfilled boxes
+and set all the unfilled box
+es
 
 2. Now Deploy
     <br>
-<a href='b' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+<a href='https://vibranium.vercel.app/deploy.htm' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
 
 
