@@ -1,0 +1,61 @@
+{
+  "name": "Vibranium-Bot",
+  "version": "1.0.1",
+  "description": "Vibranium-Bot, A simple light Weight Bot",
+  "logo": "https://i.ibb.co/x8yyTq2/20240112-010232.png",
+  "keywords": ["whatsapp", "bot", "md", "multi-device", "Vibranium", "Vibranium-MD", "wabot", "termux-bot", "sc-bot"],
+  "repository": "https://github.com/V-E-N-O-X/Vibranium-Bot",
+  "stack": "container",
+  "env": {
+    "DATABASE_URL": {
+      "description": "your mongodb database url",
+      "required": false,
+      "value": ""
+    },
+    "OWNER_NAME": {
+      "description": "put your owner name",
+      "required": false,
+      "value": "Venox"
+    },
+    "PUBLIC_MODE": {
+      "description": "mode public or private",
+      "required": true,
+      "value": "public"
+    },
+    "PREFIX": {
+      "description": "put any one symbol here except @ and +",
+      "required": false,
+      "value": ""
+    },
+     "HKEY": {
+      "description": "Put your Heroku api key Here , Get one from here https://dashboard.heroku.com/account",
+      "required": true,
+      "value": ""
+    },
+     "HAPP": {
+      "description": "Put the Heroku app name, same as above entered",
+      "required": true,
+      "value": ""
+    },
+    "SUDO": {
+      "description": "Put your owner number",
+      "required": true,
+      "value": "8801928502256"
+    }
+    },
+    "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
+
