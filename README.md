@@ -45,8 +45,7 @@ Vibranium-Bot- Baileys Multi Device whatsapp bot.
 - Now head towards to <b>heroku</b>
 - Now set <b>application name</b>
 - Now go to <b>Variables</b> 
-and set all the unfilled box
-es
+and set all the unfilled boxes
 
 2. Now Deploy
     <br>
