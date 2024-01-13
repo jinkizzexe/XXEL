@@ -18,9 +18,9 @@
       "value": "Venox"
     },
     "PUBLIC_MODE": {
-      "description": "mode public or private",
+      "description": "mode public=true else private=false",
       "required": true,
-      "value": "public"
+      "value": "true"
     },
     "PREFIX": {
       "description": "put any one symbol here except @ and +",
