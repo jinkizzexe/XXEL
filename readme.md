@@ -9,9 +9,7 @@
 ## 
 > **Warning**: This script is not for trade or sell purposes.
 
-<p align="center">
-<strong>ＫＡＮＮＡ - ＭＤ</strong>
-</p>
+<h1 align="center"> Kanna-MD </h1> 
 <p align="center"> Introducing Kanna-MD,  A simple lightweight WhatsApp userbot made with baileys & node.js. </p>
 <p align="center">
   <a href="https://github.com/V-E-N-O-X"><img title="Release" src="https://img.shields.io/badge/Version-%201.0.1-pink.svg?style=for-the-badge&logo=whatsapp" /></a>
@@ -39,10 +37,10 @@
 <strong>ABOUT</strong>
 </p>
 
-- 🔖 | **Simple**
-- 🏮️ | **Easy commands**
-- 💻️ | **Multi Device**
-- 🎮 | **Game Menu**
+-  | **Simple**
+-  | **Easy commands**
+-  | **Multi Device**
+-  | **Game Menu**
   
 
 ---------
