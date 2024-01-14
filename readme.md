@@ -2,7 +2,7 @@
 <p align="center">
   <a href="https://github.com/V-E-N-O-X"><img title="Developer" src="https://img.shields.io/badge/Author-VENOX-pink.svg?style=for-the-badge&logo=github" /></a>
 </p>
-<div align="left">
+<div align="center">
   <img border-radius: 15px src="https://i.pinimg.com/originals/42/e7/c5/42e7c5705737429652db3b8410cbec13.gif" width="400" height="205"/>
   
   
