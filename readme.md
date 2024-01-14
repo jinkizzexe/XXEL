@@ -139,10 +139,7 @@ npm start
   </details> 
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-<p align="center">
-<strong>C O N T A C T    &    C R E D I T</strong>
-</p>
-<br><br>
+<br>
  <h3 align="center">Contact Me:</h3>
 <p align="center">
 <a href="https://wa.me/8801853262586" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/whatsapp.svg" alt="kyrie_baran" height="30" width="40" /></a>
@@ -200,3 +197,9 @@ npm start
 > :octocat: Don't forget to check his profile! :point_right: [DGXeon](https://github.com/DGXeon)
 
 </p>
+
+____________________________________________
+
+> *||Copyright © 2024 by Kanna-MD Inc...All right reserved||*
+
+____________________________________________
