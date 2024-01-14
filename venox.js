@@ -1,0 +1,3 @@
+{
+	"name": "Kanna Bot byVenox"
+}
