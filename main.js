@@ -122,7 +122,6 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
 
             phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`WhatsApp number 😍\nFor example: +8801853262586 : `)))
             phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-            rl.close()
          }
       }
 
