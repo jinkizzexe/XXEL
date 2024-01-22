@@ -151,7 +151,7 @@ try{
 				startXeonBotInc();
 			} else if (reason === DisconnectReason.connectionReplaced) {
 				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
-				startXeonBotInc()
+				startXeonBotInc();
 			} else if (reason === DisconnectReason.loggedOut) {
 				console.log(`Device Logged Out, Please Delete Session and Scan Again.`);
 				startXeonBotInc();
