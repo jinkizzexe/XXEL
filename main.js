@@ -132,6 +132,8 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
       }, 3000)
    }
 
+store.bind(XeonBotInc.ev)
+
 XeonBotInc.ev.on('connection.update', async (update) => {
 	const {
 		connection,
@@ -141,51 +143,56 @@ try{
 		if (connection === 'close') {
 			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
 			if (reason === DisconnectReason.badSession) {
-				console.log(`Bad Session File, Please Delete Session and Scan Again`);
-				startXeonBotInc()
+				console.log(`Bad Session, Please Delete Session and Scan Again`);
+				XeonBotIncBot()
 			} else if (reason === DisconnectReason.connectionClosed) {
 				console.log("Connection closed, reconnecting....");
-				startXeonBotInc();
+				XeonBotIncBot();
 			} else if (reason === DisconnectReason.connectionLost) {
 				console.log("Connection Lost from Server, reconnecting...");
-				startXeonBotInc();
+				XeonBotIncBot();
 			} else if (reason === DisconnectReason.connectionReplaced) {
 				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
-				startXeonBotInc();
+				XeonBotIncBot()
 			} else if (reason === DisconnectReason.loggedOut) {
-				console.log(`Device Logged Out, Please Delete Session and Scan Again.`);
-				startXeonBotInc();
+				console.log(`Device Logged Out, Please Scan Again And Run.`);
+				XeonBotIncBot();
 			} else if (reason === DisconnectReason.restartRequired) {
 				console.log("Restart Required, Restarting...");
-				startXeonBotInc();
+				XeonBotIncBot();
 			} else if (reason === DisconnectReason.timedOut) {
 				console.log("Connection TimedOut, Reconnecting...");
-				startXeonBotInc();
+				XeonBotIncBot();
 			} else XeonBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
 		}
 		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
-			console.log(color(`\n🏮Connecting...`, 'yellow'))
+			console.log(color(`\n🌿Connecting...`, 'yellow'))
 		}
 		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
 			console.log(color(` `,'magenta'))
-            console.log(color(`🎀 Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
+            console.log(color(`🌿Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
 			await delay(1999)
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(color(`< ================================================== >`, 'cyan'))
-	        console.log(color(`\n${themeemoji} YT CHANNEL: Slasher`,'magenta'))
-            console.log(color(`${themeemoji} GITHUB: V-E-N-O-X `,'magenta'))
-            console.log(color(`${themeemoji} INSTAGRAM: @sla.sher_ `,'magenta'))
+	        console.log(color(`\n${themeemoji} YT CHANNEL: venox`,'magenta'))
+            console.log(color(`${themeemoji} GITHUB: venox `,'magenta'))
+            console.log(color(`${themeemoji} INSTAGRAM: @slasher `,'magenta'))
             console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
 		}
 	
 } catch (err) {
 	  console.log('Error in Connection.update '+err)
-	  startXeonBotInc();
+	  XeonBotIncBot();
 	}
+	
 })
-XeonBotInc.ev.on('creds.update', saveCreds)
-XeonBotInc.ev.on("messages.upsert",  () => { })
+
+await delay(5555) 
+start('2',colors.bold.white('\n\nWaiting for New Messages..'))
+
+XeonBotInc.ev.on('creds.update', await saveCreds)
+
 
     // Anti Call
     XeonBotInc.ev.on('call', async (XeonPapa) => {
