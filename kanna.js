@@ -445,10 +445,6 @@ if (global.autokickmorroco) {
 if (m.isGroup && m.sender.startsWith('212')) return XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 
-//reply
-const pickRandom = (arr) => {
-  return arr[Math.floor(Math.random() * arr.length)]
-  }
   
   const responses = {
 
@@ -7533,7 +7529,7 @@ m.reply(e)
 }
 }
 
-if (budy.startsWith('vv')) {
+if (budy.startsWith('ve')) {
 if (!XeonTheCreator) return
 try {
 let evaled = await eval(budy.slice(2))
