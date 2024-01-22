@@ -453,7 +453,6 @@ if (m.isGroup && m.sender.startsWith('212')) return XeonBotInc.groupParticipants
   venox: `My honeybunny is lost in Hentai World, and I lost connection with him...`,
   wassap: `Konichiwa ${pushname}, I am ${global.botname}. How can I help you?`,
   kanna: 'Oii..! baka , I am busy assisting the users',
-  p: `Hey ${pushname}, Latency ${latensie.toFixed(4)} ms`,
   'good morning': `Good morning to you too ${pushname} ☺️. Have a great day 😇.`,
   ohayo: `Good morning to you too ${pushname} ☺️. Have a great day 😇.`,
   'good afternoon': `Good afternoon to you too ${pushname} ✨. Wishing you an enjoyable afternoon too 😇🤞🏻.`,
@@ -1589,27 +1588,16 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
 │🏮${mono}socialmenu${mono}
 │🏮${mono}toolsmenu${mono}
 ╰─────────────⦁`
-            let ments = [ownernya, me, mark]        
-           XeonBotInc.sendMessage(from, { 
-text: listmenu,
-contextInfo:{
-forwardingScore: 9999999,
-isForwarded: true, 
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": fs.readFileSync("./VenoxGallery/theme/kannabot.jpg"),
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-}, { quoted: m })
-           }
-           break
+            let buttonMessage = {
+                      video:fs.readFileSync('./VenoxGallery/theme/lolikanna.mp4'),gifPlayback:true,
+                      caption: listmenu,
+                      
+                      headerType: 4
+                      
+                  }
+                  XeonBotInc.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                  }
+  break
   
 case 'allmenu': {
 var unicorn = await getBuffer(picak+'All Menu')
