@@ -1,3 +1,47 @@
+/**
+
+//══════════════════════════════════════════════════════════════════════════════════════════════════════//
+//                                                                                                                                      //
+//                                           ＷＨＡＴＳＡＰＰ  -  ＢＯＴ                                        //
+//                                                                                                                                           // 
+//                                                     Ｖ：１．０．１                                                                  // 
+//                                                                                                                                                                                                                                                                       //
+//                                                                                                                                                                                                                                                                          //                   
+//               ██╗░░██╗░█████╗░███╗░░██╗███╗░░██╗░█████╗░░░░░░░███╗░░░███╗██████╗░              //
+//               ██║░██╔╝██╔══██╗████╗░██║████╗░██║██╔══██╗░░░░░░████╗░████║██╔══██╗              //
+//               █████═╝░███████║██╔██╗██║██╔██╗██║███████║█████╗██╔████╔██║██║░░██║            //
+//               ██╔═██╗░██╔══██║██║╚████║██║╚████║██╔══██║╚════╝██║╚██╔╝██║██║░░██║           //
+//               ██║░╚██╗██║░░██║██║░╚███║██║░╚███║██║░░██║░░░░░░██║╚██╔╝██║██║░░██║             //
+//               ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░░╚══╝╚═╝░░╚═╝░░░░░░╚═╝░░░░░╚═╝╚═════╝░              //
+//                                                                                                                                                                                                                                                                                                                                    //
+//                                                                 @ BY : VENOX-OFFICIAL                                     //
+//                                                                                                      //
+//══════════════════════════════════════════════════════════════════════════════════════════════════════//
+
+CURRENTLY RUNNING ON TEST VERSION!!
+*
+   * @project_name : Kanna-MD
+   * @author : Venox-Official
+   * @github: https://github.com/V-E-N-O-X
+   * @description : Kanna-MD ,A lightweight multidevice whatsapp userbot .
+   * @version 1.0.1
+*
+   * Licensed under the Apacha 2.0 ;
+* 
+   * Created By DGXeon
+   * Updated By Venox-Official
+   * © 2024 Kanna-MD.
+* 
+   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   * SOFTWARE.
+ **/
+
+
 require('./settings')
 const { modul } = require('./module');
 const moment = require('moment-timezone');
@@ -122,6 +166,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
 
             phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`WhatsApp number 😍\nFor example: +8801853262586 : `)))
             phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+            rl.close()
          }
       }
 
@@ -132,8 +177,6 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
       }, 3000)
    }
 
-store.bind(XeonBotInc.ev)
-
 XeonBotInc.ev.on('connection.update', async (update) => {
 	const {
 		connection,
@@ -143,56 +186,51 @@ try{
 		if (connection === 'close') {
 			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
 			if (reason === DisconnectReason.badSession) {
-				console.log(`Bad Session, Please Delete Session and Scan Again`);
-				XeonBotIncBot()
+				console.log(`Bad Session File, Please Delete Session and Scan Again`);
+				startXeonBotInc()
 			} else if (reason === DisconnectReason.connectionClosed) {
 				console.log("Connection closed, reconnecting....");
-				XeonBotIncBot();
+				startXeonBotInc();
 			} else if (reason === DisconnectReason.connectionLost) {
 				console.log("Connection Lost from Server, reconnecting...");
-				XeonBotIncBot();
+				startXeonBotInc();
 			} else if (reason === DisconnectReason.connectionReplaced) {
 				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
-				XeonBotIncBot()
+				startXeonBotInc()
 			} else if (reason === DisconnectReason.loggedOut) {
-				console.log(`Device Logged Out, Please Scan Again And Run.`);
-				XeonBotIncBot();
+				console.log(`Device Logged Out, Please Delete Session and Scan Again.`);
+				startXeonBotInc();
 			} else if (reason === DisconnectReason.restartRequired) {
 				console.log("Restart Required, Restarting...");
-				XeonBotIncBot();
+				startXeonBotInc();
 			} else if (reason === DisconnectReason.timedOut) {
 				console.log("Connection TimedOut, Reconnecting...");
-				XeonBotIncBot();
+				startXeonBotInc();
 			} else XeonBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
 		}
 		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
-			console.log(color(`\n🌿Connecting...`, 'yellow'))
+			console.log(color(`\n🏮Connecting...`, 'yellow'))
 		}
 		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
 			console.log(color(` `,'magenta'))
-            console.log(color(`🌿Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
+            console.log(color(`🎀 Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
 			await delay(1999)
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(color(`< ================================================== >`, 'cyan'))
-	        console.log(color(`\n${themeemoji} YT CHANNEL: venox`,'magenta'))
-            console.log(color(`${themeemoji} GITHUB: venox `,'magenta'))
-            console.log(color(`${themeemoji} INSTAGRAM: @slasher `,'magenta'))
+	        console.log(color(`\n${themeemoji} YT CHANNEL: Slasher`,'magenta'))
+            console.log(color(`${themeemoji} GITHUB: V-E-N-O-X `,'magenta'))
+            console.log(color(`${themeemoji} INSTAGRAM: @sla.sher_ `,'magenta'))
             console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
 		}
 	
 } catch (err) {
 	  console.log('Error in Connection.update '+err)
-	  XeonBotIncBot();
+	  startXeonBotInc();
 	}
-	
 })
-
-await delay(5555) 
-start('2',colors.bold.white('\n\nWaiting for New Messages..'))
-
-XeonBotInc.ev.on('creds.update', await saveCreds)
-
+XeonBotInc.ev.on('creds.update', saveCreds)
+XeonBotInc.ev.on("messages.upsert",  () => { })
 
     // Anti Call
     XeonBotInc.ev.on('call', async (XeonPapa) => {
@@ -296,7 +334,7 @@ XeonLft = await getBuffer(ppuser)
 	            const xdate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY')
 	            const xmembers = metadata.participants.length
                 xeonbody = `┌─❖
-│『  *Hi..!! 🗿*  』
+│『  *Hi..!! 🐦*  』
 └┬
     ◎ 「  @${xeonName.split("@")[0]}  」
     │ ➪  *Wᴇʟᴄᴏᴍᴇ Tᴏ*
