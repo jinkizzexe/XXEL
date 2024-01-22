@@ -1,47 +1,3 @@
-/**
-
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-//                                                                                                                                      //
-//                                           ＷＨＡＴＳＡＰＰ  -  ＢＯＴ                                        //
-//                                                                                                                                           // 
-//                                                     Ｖ：１．０．１                                                                  // 
-//                                                                                                                                                                                                                                                                       //
-//                                                                                                                                                                                                                                                                          //                   
-//               ██╗░░██╗░█████╗░███╗░░██╗███╗░░██╗░█████╗░░░░░░░███╗░░░███╗██████╗░              //
-//               ██║░██╔╝██╔══██╗████╗░██║████╗░██║██╔══██╗░░░░░░████╗░████║██╔══██╗              //
-//               █████═╝░███████║██╔██╗██║██╔██╗██║███████║█████╗██╔████╔██║██║░░██║            //
-//               ██╔═██╗░██╔══██║██║╚████║██║╚████║██╔══██║╚════╝██║╚██╔╝██║██║░░██║           //
-//               ██║░╚██╗██║░░██║██║░╚███║██║░╚███║██║░░██║░░░░░░██║╚██╔╝██║██║░░██║             //
-//               ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░░╚══╝╚═╝░░╚═╝░░░░░░╚═╝░░░░░╚═╝╚═════╝░              //
-//                                                                                                                                                                                                                                                                                                                                    //
-//                                                                 @ BY : VENOX-OFFICIAL                                     //
-//                                                                                                      //
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-
-CURRENTLY RUNNING ON TEST VERSION!!
-*
-   * @project_name : Kanna-MD
-   * @author : Venox-Official
-   * @github: https://github.com/V-E-N-O-X
-   * @description : Kanna-MD ,A lightweight multidevice whatsapp userbot .
-   * @version 1.0.1
-*
-   * Licensed under the Apacha 2.0 ;
-* 
-   * Created By DGXeon
-   * Updated By Venox-Official
-   * © 2024 Kanna-MD.
-* 
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
- **/
-
-
 require('./settings')
 const { modul } = require('./module');
 const moment = require('moment-timezone');
@@ -334,7 +290,7 @@ XeonLft = await getBuffer(ppuser)
 	            const xdate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY')
 	            const xmembers = metadata.participants.length
                 xeonbody = `┌─❖
-│『  *Hi..!! 🐦*  』
+│『  *Hi..!! 🗿*  』
 └┬
     ◎ 「  @${xeonName.split("@")[0]}  」
     │ ➪  *Wᴇʟᴄᴏᴍᴇ Tᴏ*
