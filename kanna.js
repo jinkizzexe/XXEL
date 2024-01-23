@@ -1552,7 +1552,9 @@ case 'music': {
     { quoted: m }
   );
   
-break
+break;
+
+
 case 'shutdown':
 if (!XeonTheCreator) return XeonStickOwner()
 replygcxeon(`imma sleep...bye`)
