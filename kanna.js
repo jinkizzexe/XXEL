@@ -1577,8 +1577,7 @@ ${mono}
                   }
                   XeonBotInc.sendMessage(m.chat, buttonMessage,{ quoted:m })
                   }
-  break​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-  
+break​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 case 'allmenu': {
 var unicorn = await getBuffer(picak+'All Menu')
 sendXeonBotIncMessage(from, { 
@@ -1600,7 +1599,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'ownermenu': {
 var unicorn = await getBuffer(picak+'Owner Menu')
 sendXeonBotIncMessage(from, { 
@@ -1622,7 +1620,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'botmenu': {
 var unicorn = await getBuffer(picak+'Bot Menu')
 sendXeonBotIncMessage(from, { 
@@ -1644,7 +1641,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'toolsmenu': {
 	var unicorn = await getBuffer(picak+'Tools Menu')
 sendXeonBotIncMessage(from, { 
@@ -1666,7 +1662,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'dlmenu': {
 var unicorn = await getBuffer(picak+'Dl Menu')
 sendXeonBotIncMessage(from, { 
@@ -1688,7 +1683,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'groupmenu': {
 var unicorn = await getBuffer(picak+'Group Menu')
 sendXeonBotIncMessage(from, { 
@@ -1710,7 +1704,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'funmenu': {
 var unicorn = await getBuffer(picak+'Fun Menu')
 sendXeonBotIncMessage(from, { 
@@ -1732,7 +1725,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'stalkermenu': {
 var unicorn = await getBuffer(picak+'Stalker Menu')
 sendXeonBotIncMessage(from, { 
@@ -1754,7 +1746,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'socialmenu': {
 var unicorn = await getBuffer(picak+'Social Menu')
 sendXeonBotIncMessage(from, { 
@@ -1776,7 +1767,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'nsfwmenu': {
 var unicorn = await getBuffer(picak+'Anime NSFW Menu')
 sendXeonBotIncMessage(from, { 
@@ -1798,7 +1788,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'animemenu': {
 var unicorn = await getBuffer(picak+'Anime Menu')
 sendXeonBotIncMessage(from, { 
@@ -1820,7 +1809,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'stickermenu': {
 var unicorn = await getBuffer(picak+'Sticker Menu')
 sendXeonBotIncMessage(from, { 
@@ -1842,7 +1830,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'aimenu': {
 var unicorn = await getBuffer(picak+'OpenAI Menu')
 sendXeonBotIncMessage(from, { 
@@ -1864,7 +1851,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'bugsmenu': {
 var unicorn = await getBuffer(picak+'Bugs Menu')
 sendXeonBotIncMessage(from, { 
@@ -1886,7 +1872,6 @@ mentionedJid:[sender],
 })
 }
 break
-
 case 'sound1':
 case 'sound2':
 case 'sound3':
