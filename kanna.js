@@ -1516,44 +1516,6 @@ XeonBotInc.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 replygcxeon(`There are no users who have rented the bot yet`)
 }
 
-case 'play':
-case 'song':
-case 'music': {
-  await XeonStickWait();
-
-  const YT = require('./lib/ytdl-core');
-  const yts = require('youtube-yts');
-  const ffmpeg = require('fluent-ffmpeg');
-  
-  let search = await yts(text);
-  let anu = search.videos[0];
-  const ytmp3play = await YT.mp3(anu.url);
-
-  // Fetch the thumbnail URL from the 'anu' object
-  let thumbnailUrl = anu.thumbnail;
-
-  await XeonBotInc.sendMessage(
-    from,
-    {
-      image: { url: thumbnailUrl }, // Include the thumbnail image in the response
-      caption: `\n*Downloading:* *${anu.title}*
-            
-  ⏳ *Duration :* ${anu.timestamp}
-
-  📈 *Viewers :* ${anu.views}
-
-  🎐 *Channel :* ${anu.author.name}
-
-  🏮 *Video Uploaded:* ${anu.ago}
-
-  🔗 *Url :* ${anu.url}\n`,
-
-    },
-    { quoted: m }
-  );
-  
-break;
-
 
 case 'shutdown':
 if (!XeonTheCreator) return XeonStickOwner()
