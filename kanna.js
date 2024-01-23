@@ -1535,7 +1535,7 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
             let timestampe = speed()
             let mono = '```'
             let latensie = speed() - timestampe
-            const listmenu = `*${xeonytimewisher} Senpai..!!
+            const listmenu = `*${xeonytimewisher} Senpai..!!*
 
 📚 *ᴜᴘ ᴛɪᴍᴇ:* ${xtime}
 🍁 *ᴛᴏᴅᴀʏ ɪs:*  ${xdate}
@@ -2585,7 +2585,7 @@ case 'block': case 'ban': {
 case 'ping': case 'p': {
  await XeonStickWait()
   
-   m.replygcxeon(`Ahh!! Wait ${pushname} Lactency...🚀️`)
+   await replygcxeon(`Ahh!! Wait ${pushname} Lactency...🚀️`)
    let cp = require('child_process')
    let { promisify } = require('util')
    let exec = promisify(cp.exec).bind(cp)
