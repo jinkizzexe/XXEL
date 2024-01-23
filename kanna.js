@@ -1588,7 +1588,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1,
-"thumbnail": fs.readFileSync("./VenoxGallery/theme/kannabot.jpg")
+"thumbnail": fs.readFileSync("./VenoxGallery/theme/kannabot.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
