@@ -445,27 +445,6 @@ if (global.autokickmorroco) {
 if (m.isGroup && m.sender.startsWith('212')) return XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 
-  
-  const responses = {
-
-  
-  hello: `Hello ${pushname}, I am ${global.botname}. I can be used without prefix. How can I help you?`,
-  venox: `My honeybunny is lost in Hentai World, and I lost connection with him...`,
-  wassap: `Konichiwa ${pushname}, I am ${global.botname}. How can I help you?`,
-  kanna: 'Oii..! baka , I am busy assisting the users',
-  'good morning': `Good morning to you too ${pushname} ☺️. Have a great day 😇.`,
-  ohayo: `Good morning to you too ${pushname} ☺️. Have a great day 😇.`,
-  'good afternoon': `Good afternoon to you too ${pushname} ✨. Wishing you an enjoyable afternoon too 😇🤞🏻.`,
-  'good night': `Good night to you too ${pushname} 😇. Sleep well and sweet dreams.`,
- 
-};
-
-const smallinput = budy.toLowerCase();
-
-if (responses.hasOwnProperty(smallinput)) {
-  reply(responses[smallinput]);
-}
-
 
 //antispam kick
 if (global.antispam) {
@@ -705,7 +684,7 @@ const repPy = {
 			amount: {
 				value: 91929291929,
 				offset: 1000,
-				currencyCode: "BDT"
+				currencyCode: "USD"
 			}
 		}
 	}
@@ -1536,6 +1515,43 @@ XeonBotInc.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 } catch (err) {
 replygcxeon(`There are no users who have rented the bot yet`)
 }
+
+case 'play':
+case 'song':
+case 'music': {
+  await XeonStickWait();
+
+  const YT = require('./lib/ytdl-core');
+  const yts = require('youtube-yts');
+  const ffmpeg = require('fluent-ffmpeg');
+  
+  let search = await yts(text);
+  let anu = search.videos[0];
+  const ytmp3play = await YT.mp3(anu.url);
+
+  // Fetch the thumbnail URL from the 'anu' object
+  let thumbnailUrl = anu.thumbnail;
+
+  await XeonBotInc.sendMessage(
+    from,
+    {
+      image: { url: thumbnailUrl }, // Include the thumbnail image in the response
+      caption: `\n*Downloading:* *${anu.title}*
+            
+  ⏳ *Duration :* ${anu.timestamp}
+
+  📈 *Viewers :* ${anu.views}
+
+  🎐 *Channel :* ${anu.author.name}
+
+  🏮 *Video Uploaded:* ${anu.ago}
+
+  🔗 *Url :* ${anu.url}\n`,
+
+    },
+    { quoted: m }
+  );
+  
 break
 case 'shutdown':
 if (!XeonTheCreator) return XeonStickOwner()
@@ -1559,9 +1575,9 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
             let latensie = speed() - timestampe
             const listmenu = `${xeonytimewisher}
 
-📚*ᴜᴘ ᴛɪᴍᴇ:* ${xtime}
-🍁*ᴛᴏᴅᴀʏ ɪs:*  ${xdate}
-📍*ɴᴏᴡ ᴛɪᴍᴇ:* ${runtime(process.uptime())}
+📚 *ᴜᴘ ᴛɪᴍᴇ:* ${xtime}
+🍁 *ᴛᴏᴅᴀʏ ɪs:*  ${xdate}
+📍 *ɴᴏᴡ ᴛɪᴍᴇ:* ${runtime(process.uptime())}
 
 ➮ Bᴏᴛ-ɴᴀᴍᴇ:  ${global.botname}
 ➮ Sᴘᴇᴇᴅ:  ${latensie.toFixed(4)} miliseconds
@@ -1573,20 +1589,20 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
 
 ╭──❰ *LIST MENU* ❱
 │
-│🏮${mono}allmenu${mono}
-│🏮${mono}botmenu${mono}
-│🏮${mono}ownermenu${mono}
-│🏮${mono}dlmenu${mono}
-│🏮${mono}groupmenu${mono}
-│🏮${mono}funmenu${mono}
-│🏮${mono}aimenu${mono}
-│🏮${mono}animemenu${mono}
-│🏮${mono}nsfwmenu${mono}
-│🏮${mono}stickermenu${mono}
-│🏮${mono}bugsmenu${mono}
-│🏮${mono}stalkermenu${mono}
-│🏮${mono}socialmenu${mono}
-│🏮${mono}toolsmenu${mono}
+│🏮${mono}  allmenu${mono}
+│🏮${mono}  botmenu${mono}
+│🏮${mono}  ownermenu${mono}
+│🏮${mono}  dlmenu${mono}
+│🏮${mono}  groupmenu${mono}
+│🏮${mono}  funmenu${mono}
+│🏮${mono}  aimenu${mono}
+│🏮${mono}  animemenu${mono}
+│🏮${mono}  nsfwmenu${mono}
+│🏮${mono}  stickermenu${mono}
+│🏮${mono}  bugsmenu${mono}
+│🏮${mono}  stalkermenu${mono}
+│🏮${mono}  socialmenu${mono}
+│🏮${mono}  toolsmenu${mono}
 ╰─────────────⦁`
             let buttonMessage = {
                       video:fs.readFileSync('./VenoxGallery/theme/lolikanna.mp4'),gifPlayback:true,
@@ -1611,8 +1627,10 @@ mentionedJid:[sender],
 "renderLargerThumbnail": true,
 "title": botname, 
 "containsAutoReply": true,
-"mediaType": 2, 
-"thumbnail": fs.readFileSync("./VenoxGallery/theme/lolikanna.mp4")
+"mediaType": 1,
+"thumbnail": fs.readFileSync("./VenoxGallery/theme/kannabot.jpg")
+"mediaUrl": `${wagc}`,
+"sourceUrl": `${wagc}`
 }
 }
 })
@@ -1638,6 +1656,7 @@ mentionedJid:[sender],
 }
 })
 }
+break
 case 'botmenu': {
 var unicorn = await getBuffer(picak+'Bot Menu')
 sendXeonBotIncMessage(from, { 
@@ -2070,7 +2089,7 @@ XeonBotInc.sendMessage(from, {text: `Here @${teman.split("@")[0]}`, mentions: [t
 break
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 me = m.sender
-teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋\nMake sure you star the repo 🌟`
+teks = `*「  ${global.botname} Script 」*\n\nGithub: ${global.websitex}\nScrpit: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋\nMake sure you star the repo 🌟`
 sendXeonBotIncMessage(from, { 
 text: teks,
 mentions:[sender],
@@ -2084,7 +2103,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./VenoxGallery/theme/lolikanna.jpg"),
+"thumbnail": fs.readFileSync("./VenoxGallery/theme/kannabot.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -2115,7 +2134,7 @@ case 'repo': case 'repository': {
  `.trim()
       await XeonBotInc.relayMessage(m.chat,  {
         requestPaymentMessage: {
-          currencyCodeIso4217: 'BDT',
+          currencyCodeIso4217: 'USD',
           amount1000: 199,
           requestFrom: m.sender,
           noteMessage: {
@@ -3409,31 +3428,6 @@ Copy the link above and type the .ytmp3 link for audio and the .ytmp4 link for v
 XeonBotInc.sendMessage(m.chat, { image : eek, caption: ngen }, { quoted: m})
 }
 break
-case 'play':  case 'song': {
-if (!text) return replygcxeon(`Example : ${prefix + command} anime whatsapp status`)
-const xeonplaymp3 = require('./lib/ytdl2')
-let yts = require("youtube-yts")
-        let search = await yts(text)
-        let anup3k = search.videos[0]
-const pl= await xeonplaymp3.mp3(anup3k.url)
-await XeonBotInc.sendMessage(m.chat,{
-    audio: fs.readFileSync(pl.path),
-    fileName: anup3k.title + '.mp3',
-    mimetype: 'audio/mp4', ptt: true,
-    contextInfo:{
-        externalAdReply:{
-            title:anup3k.title,
-            body: botname,
-            thumbnail: await fetchBuffer(pl.meta.image),
-            mediaType:2,
-            mediaUrl:anup3k.url,
-        }
-
-    },
-},{quoted:m})
-await fs.unlinkSync(pl.path)
-}
-break
 case 'playdoc':
                    if (args.length < 1) return replygcxeon(`Send orders ${command} query\nExample : ${command} adele hello`)
                    const { yta, ytv } = require('./lib/ytdl')
@@ -4372,7 +4366,7 @@ case 'qc': case'text': {
       try {
         userPfp = await XeonBotInc.profilePictureUrl(m.quoted.sender, "image")
       } catch (e) {
-        userPfp = defaultpp
+        userPfp = defaultpp0
       }
     } else {
       try {
@@ -6377,33 +6371,14 @@ await XeonStickWait()
                 quoted: m,
             })
             break
-            case 'weather':{
-if (!text) return replygcxeon('What location?')
-            let wdata = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
-            );
-            let textw = ""
-            textw += `*🗺️Weather of  ${text}*\n\n`
-            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`
-            textw += `*Description:-* ${wdata.data.weather[0].description}\n`
-            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`
-            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`
-            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`
-            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`
-            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`
-            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`
-            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
-            textw += `*Country:-* ${wdata.data.sys.country}\n`
+            case 'weather':
+        if (!text) return replygcxeon("what's the location?")
+        myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
-           XeonBotInc.sendMessage(
-                m.chat, {
-                    text: textw,
-                }, {
-                    quoted: m,
-                }
-           )
-           }
-           break
+        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        XeonBotInc.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
+
+        break
            case 'wanumber': case 'nowa': case 'searchno': case 'searchnumber':{
            	if (!text) return replygcxeon(`Provide Number with last number x\n\nExample: ${prefix + command} 99477509x`)
 var inputnumber = text.split(" ")[0]
