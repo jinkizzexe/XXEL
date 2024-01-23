@@ -1578,7 +1578,7 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
 case 'allmenu': {
 var unicorn = await getBuffer(picak+'All Menu')
 sendXeonBotIncMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`,
+text: `Hi @${sender.split("@")[0]}\n\n${allmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -2439,7 +2439,7 @@ break
                  XeonBotInc.sendTextWithMentions(m.chat, teks, m)
              }
              break
-             case 'ping': case 'botstatus': case 'statusbot': case 'p': {
+             case 'botinfo': case 'botstatus': case 'statusbot': case 'susinfo': {
 	const used = process.memoryUsage()
                 const cpus = os.cpus().map(cpu => {
                     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
@@ -2485,7 +2485,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 `.trim()
 	XeonBotInc.relayMessage(m.chat,  {
         requestPaymentMessage: {
-          currencyCodeIso4217: 'BDT',
+          currencyCodeIso4217: 'USD',
           amount1000: 69,
           requestFrom: m.sender,
           noteMessage: {
@@ -2582,6 +2582,25 @@ case 'block': case 'ban': {
 		await replygcxeon(`Done`)
 	}
 	break
+case 'ping': case 'p': {
+ await XeonStickWait()
+  
+   m.replygcxeon(`Ahh!! Wait ${pushname} Lactency...🚀️`)
+   let cp = require('child_process')
+   let { promisify } = require('util')
+   let exec = promisify(cp.exec).bind(cp)
+ let o
+ try {
+ o = await exec('python speed.py')
+ } catch (e) {
+ o = e
+} finally {
+let { stdout, stderr } = o
+if (stdout.trim()) m.reply(stdout)
+if (stderr.trim()) m.reply(stderr)
+   }
+   }
+   break
         case 'unblock': case 'unban': {
 		if (!XeonTheCreator) return XeonStickOwner()
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
