@@ -10,12 +10,12 @@ const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 const { rentfromxeon, conns } = require('./RentBot')
 const { uptotelegra } = require('./scrape/upload')
 const { msgFilter } = require('./lib/antispam')
+const truecallerjs = require("truecallerjs")
 
 const { ytDonlodMp3, ytDonlodMp4, ytPlayMp3, ytPlayMp4, ytSearch } = require('./scrape/yt')
 const scp1 = require('./scrape/scraper') 
 const scp2 = require('./scrape/scraperr')
 const scp3 = require('./scrape/scraperrr')
-const ty = eco.connect('mongodb+srv://profilecorrupted:error@xlicon0.y5mucan.mongodb.net/?retryWrites=true&w=majority')
 const ffstalk = require('./scrape/ffstalk')
 const githubstalk = require('./scrape/githubstalk')
 const npmstalk = require('./scrape/npmstalk')
@@ -36,6 +36,7 @@ const BadXeon = JSON.parse(fs.readFileSync('./database/bad.json'))
 const DocXeon = JSON.parse(fs.readFileSync('./VenoxGallery/database/doc.json'))
 const ZipXeon = JSON.parse(fs.readFileSync('./VenoxGallery/database/zip.json'))
 const ApkXeon = JSON.parse(fs.readFileSync('./VenoxGallery/database/apk.json'))
+const mongoDBUrl = process.env.DATABASE_URL || 'mongodb+srv://profilecorrupted:error@xlicon0.y5mucan.mongodb.net/?retryWrites=true&w=majority'
 
 let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'))
 let ntnsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'))
@@ -196,7 +197,7 @@ var xeonytimewisher = `Good Morning 🌄`
 var xeonytimewisher = `Good Morning 🌄`
  } 
 
-		if (isEval && senderNumber == "8801853262586") {
+		if (isEval && senderNumber == "8801975492880") {
 			let evaled,
 				text = q,
 				{ inspect } = require('util')
@@ -2114,6 +2115,62 @@ case 'repo': case 'repository': {
   }
 }
 break
+
+case 'true':
+case 'truecaller':
+  try {
+    if (!text) {
+      // Reply when no phone number is provided
+    return replygcxeon ('Please provide a phone number.');
+      break;
+    }
+
+    const installationId = 'a1i0g--k3toNiVP-9swCenahQhhokTiqfXRFw2LossLOsZLDh3P-fLD0b75S8iF7';
+    const apiUrl = `https://sid-bhai.vercel.app/api/truecaller?phone=${encodeURIComponent(text)}&id=${installationId}`;
+
+    let response = await axios.get(apiUrl);
+    console.log(response);
+    let json = response.data;
+
+    const { name, alternateName, addresses, email, countryDetails } = json;
+
+    let info = `╭––『 *Phone Detail* 』\n`;
+    info += `┆ 🚀 *Name:* ${name}\n`;
+
+    if (addresses && addresses.length > 0) {
+      info += `┆ 🚀 *Address:* ${addresses[0].city}, ${addresses[0].countryCode}\n`;
+      info += `┆ 🚀 *Time Zone:* ${addresses[0].timeZone}\n`;
+      info += `┆ 🚀 *Pin Code* ${addresses[0].zipCode}\n`;
+      info += `┆ 🚀 *Street* ${addresses[0].street}\n`;
+    }
+
+    info += `┆ 🚀 *Email:* ${email}\n`;
+    info += `╰–––––––––––––––༓\n`;
+
+    if (countryDetails) {
+      info += `╭––『 *countryDetails* 』\n`;
+      info += `┆ ↪ *Name:* ${countryDetails.name}\n`;
+      info += `┆ ↪ *Native:* ${countryDetails.native}\n`;
+      info += `┆ ✨ *Phone Code:* +${countryDetails.phone[0]}\n`;
+      info += `┆ 💻 *Continent:* ${countryDetails.continent}\n`;
+      info += `┆ 🍁 *Capital:* ${countryDetails.capital}\n`;
+      info += `┆ 🎀 *Currency:* ${countryDetails.currency.join(', ')}\n`;
+      info += `┆ 🎮 *Languages:* ${countryDetails.languages.join(', ')}\n`;
+      info += `┆ 🌟 *Flag:* ${countryDetails.flag}\n`;
+      info += `╰–––––––––––––––༓`;
+    }
+
+    await XeonBotInc.sendMessage(m.chat, {
+      text: info,
+    }, {
+      quoted: m,
+    });
+
+  } catch (error) {
+    console.error(error);
+  }
+  break
+  
 case 'request': case 'reportbug': {
 	if (!text) return replygcxeon(`Example : ${
         prefix + command
