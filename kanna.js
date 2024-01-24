@@ -1,4 +1,3 @@
-require("dotenv").config()
 require('./settings')
 require('./lib/listmenu')
 const { modul } = require('./module')
