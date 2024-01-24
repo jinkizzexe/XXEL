@@ -10,7 +10,6 @@ const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 const { rentfromxeon, conns } = require('./RentBot')
 const { uptotelegra } = require('./scrape/upload')
 const { msgFilter } = require('./lib/antispam')
-const truecallerjs = require("truecallerjs")
 
 const { ytDonlodMp3, ytDonlodMp4, ytPlayMp3, ytPlayMp4, ytSearch } = require('./scrape/yt')
 const scp1 = require('./scrape/scraper') 
@@ -2116,61 +2115,6 @@ case 'repo': case 'repository': {
 }
 break
 
-case 'true':
-case 'truecaller':
-  try {
-    if (!text) {
-      // Reply when no phone number is provided
-    return replygcxeon ('Please provide a phone number.');
-      break;
-    }
-
-    const installationId = 'a1i0g--k3toNiVP-9swCenahQhhokTiqfXRFw2LossLOsZLDh3P-fLD0b75S8iF7';
-    const apiUrl = `https://sid-bhai.vercel.app/api/truecaller?phone=${encodeURIComponent(text)}&id=${installationId}`;
-
-    let response = await axios.get(apiUrl);
-    console.log(response);
-    let json = response.data;
-
-    const { name, alternateName, addresses, email, countryDetails } = json;
-
-    let info = `╭––『 *Phone Detail* 』\n`;
-    info += `┆ 🚀 *Name:* ${name}\n`;
-
-    if (addresses && addresses.length > 0) {
-      info += `┆ 🚀 *Address:* ${addresses[0].city}, ${addresses[0].countryCode}\n`;
-      info += `┆ 🚀 *Time Zone:* ${addresses[0].timeZone}\n`;
-      info += `┆ 🚀 *Pin Code* ${addresses[0].zipCode}\n`;
-      info += `┆ 🚀 *Street* ${addresses[0].street}\n`;
-    }
-
-    info += `┆ 🚀 *Email:* ${email}\n`;
-    info += `╰–––––––––––––––༓\n`;
-
-    if (countryDetails) {
-      info += `╭––『 *countryDetails* 』\n`;
-      info += `┆ ↪ *Name:* ${countryDetails.name}\n`;
-      info += `┆ ↪ *Native:* ${countryDetails.native}\n`;
-      info += `┆ ✨ *Phone Code:* +${countryDetails.phone[0]}\n`;
-      info += `┆ 💻 *Continent:* ${countryDetails.continent}\n`;
-      info += `┆ 🍁 *Capital:* ${countryDetails.capital}\n`;
-      info += `┆ 🎀 *Currency:* ${countryDetails.currency.join(', ')}\n`;
-      info += `┆ 🎮 *Languages:* ${countryDetails.languages.join(', ')}\n`;
-      info += `┆ 🌟 *Flag:* ${countryDetails.flag}\n`;
-      info += `╰–––––––––––––––༓`;
-    }
-
-    await XeonBotInc.sendMessage(m.chat, {
-      text: info,
-    }, {
-      quoted: m,
-    });
-
-  } catch (error) {
-    console.error(error);
-  }
-  break
-  
 case 'request': case 'reportbug': {
 	if (!text) return replygcxeon(`Example : ${
         prefix + command
@@ -2640,25 +2584,24 @@ case 'block': case 'ban': {
 		await replygcxeon(`Done`)
 	}
 	break
-case 'ping': case 'p': {
- await XeonStickWait()
-  
-   await replygcxeon(`Ahh!! Wait ${pushname} Lactency...🚀️`)
-   let cp = require('child_process')
-   let { promisify } = require('util')
-   let exec = promisify(cp.exec).bind(cp)
- let o
- try {
- o = await exec('python speed.py')
- } catch (e) {
- o = e
-} finally {
-let { stdout, stderr } = o
-if (stdout.trim()) m.reply(stdout)
-if (stderr.trim()) m.reply(stderr)
-   }
-   }
-   break
+case 'runtime': case 'alive':
+                let latensie = speed() - timestampe
+                let pinga = ` ${latensie.toFixed(4)}`
+                XeonBotInc.sendMessage(m.chat, {
+        image: fs.readFileSync('./VenoxGallery/theme/kannabot.jpg'),
+        caption: pinga,
+        contextInfo: {
+            externalAdReply: {
+                showAdAttribution: false,
+                title: botname,
+                sourceUrl: global.link,
+                body: `${global.owner}`
+            }
+        }
+    }, {
+      quoted: m
+                })
+                break
         case 'unblock': case 'unban': {
 		if (!XeonTheCreator) return XeonStickOwner()
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
@@ -3443,7 +3386,7 @@ let search = await yts(text)
 url = search.videos[0].url
 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 eek = await getBuffer(anu.thumbnail)
-owned = `${ownernumber}@s.whatsapp.net`
+owned = `${global.ownernumber}@s.whatsapp.net`
 ngen = `
 🏮 Title : ${anu.title}
 
