@@ -1531,7 +1531,7 @@ XeonBotInc.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Here is my o
 }
 break
 case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'instructor': {
-	        let ownernya = ownernomer + '@s.whatsapp.net'
+	        let ownernya = ownernumber + '@s.whatsapp.net'
             let me = m.sender
             let timestampe = speed()
             let mono = '```'
