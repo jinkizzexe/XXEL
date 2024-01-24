@@ -15,6 +15,7 @@ const { ytDonlodMp3, ytDonlodMp4, ytPlayMp3, ytPlayMp4, ytSearch } = require('./
 const scp1 = require('./scrape/scraper') 
 const scp2 = require('./scrape/scraperr')
 const scp3 = require('./scrape/scraperrr')
+const ty = eco.connect('mongodb+srv://profilecorrupted:error@xlicon0.y5mucan.mongodb.net/?retryWrites=true&w=majority')
 const ffstalk = require('./scrape/ffstalk')
 const githubstalk = require('./scrape/githubstalk')
 const npmstalk = require('./scrape/npmstalk')
@@ -621,7 +622,7 @@ key: {
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
 ...(from ? {
-remoteJid: `${ownernumber}@s.whatsapp.net` } : {}) }, 
+remoteJid: `${global.ownernumber}@s.whatsapp.net` } : {}) }, 
 message: { 
 extendedTextMessage: { 
 text: `${m.pushName}`, 
@@ -1530,7 +1531,7 @@ XeonBotInc.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Here is my o
 }
 break
 case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'instructor': {
-	        let ownernya = ownernomer + '@s.whatsapp.net'
+	        let ownernya = ownernumber + '@s.whatsapp.net'
             let me = m.sender
             let timestampe = speed()
             let mono = '```'
@@ -1543,7 +1544,7 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
 
 ➮ Bᴏᴛ-ɴᴀᴍᴇ:  ${global.botname}
 ➮ Sᴘᴇᴇᴅ:  ${latensie.toFixed(4)} miliseconds
-➮ Oᴡɴᴇʀ-Nᴜᴍ:  ${ownernumber}
+➮ Oᴡɴᴇʀ-Nᴜᴍ:  ${global.ownernumber}
 ➮ Mᴏᴅᴇ: ${XeonBotInc.public ? 'Public' : `Private`}
 ➮ Pʀᴇᴍɪᴜᴍ:  ${isPrem ? 'Yes' : `No`}
 ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
