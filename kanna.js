@@ -1,3 +1,4 @@
+require("dotenv").config()
 require('./settings')
 require('./lib/listmenu')
 const { modul } = require('./module')
@@ -196,7 +197,7 @@ var xeonytimewisher = `Good Morning 🌄`
 var xeonytimewisher = `Good Morning 🌄`
  } 
 
-		if (isEval && senderNumber == "8801975492880") {
+		if (isEval && senderNumber == "8801853262586") {
 			let evaled,
 				text = q,
 				{ inspect } = require('util')
@@ -279,7 +280,7 @@ if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 
             if (budy.toLowerCase() == jawaban) {
 
-                await m.reply(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
+                await m.reply(`🎮 Math Quiz 🎮\n\nCorrect Answer ??\n\nWant To Play Again? Send ${prefix}math mode`)
 
                 delete kuismath[m.sender.split('@')[0]]
 
@@ -480,7 +481,7 @@ isForwarded: true,
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./VenoxGallery/theme/lolikanna.jpg`),
+"thumbnail": fs.readFileSync(`./VenoxGallery/theme/kannabot.jpg`),
 "sourceUrl": `${wagc}`}}},
 { quoted: m})
 }
@@ -622,7 +623,7 @@ key: {
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
 ...(from ? {
-remoteJid: `${global.ownernumber}@s.whatsapp.net` } : {}) }, 
+remoteJid: `${ownernumber}@s.whatsapp.net` } : {}) }, 
 message: { 
 extendedTextMessage: { 
 text: `${m.pushName}`, 
@@ -684,7 +685,7 @@ const repPy = {
 			amount: {
 				value: 91929291929,
 				offset: 1000,
-				currencyCode: "BDT"
+				currencyCode: "USD"
 			}
 		}
 	}
@@ -1531,7 +1532,7 @@ XeonBotInc.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Here is my o
 }
 break
 case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'instructor': {
-	        let ownernya = ownernumber + '@s.whatsapp.net'
+	        let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let timestampe = speed()
             let mono = '```'
@@ -1544,7 +1545,7 @@ case 'listmenu': case 'menu': case 'list': case 'help': case 'manual': case 'ins
 
 ➮ Bᴏᴛ-ɴᴀᴍᴇ:  ${global.botname}
 ➮ Sᴘᴇᴇᴅ:  ${latensie.toFixed(4)} miliseconds
-➮ Oᴡɴᴇʀ-Nᴜᴍ:  ${global.ownernumber}
+➮ Oᴡɴᴇʀ-Nᴜᴍ:  ${ownernumber}
 ➮ Mᴏᴅᴇ: ${XeonBotInc.public ? 'Public' : `Private`}
 ➮ Pʀᴇᴍɪᴜᴍ:  ${isPrem ? 'Yes' : `No`}
 ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
@@ -2114,7 +2115,6 @@ case 'repo': case 'repository': {
   }
 }
 break
-
 case 'request': case 'reportbug': {
 	if (!text) return replygcxeon(`Example : ${
         prefix + command
@@ -2500,7 +2500,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
     }
 	
 	break
-             case 'ping2': case 'botstatus2': case 'statusbot2': case 'p2': {
+             case 'ping': case 'botstatus2': case 'statusbot2': case 'p': {
                 const used = process.memoryUsage()
                 const cpus = os.cpus().map(cpu => {
                     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
@@ -2584,24 +2584,46 @@ case 'block': case 'ban': {
 		await replygcxeon(`Done`)
 	}
 	break
-case 'runtime': case 'alive':
-                let latensie = speed() - timestampe
-                let pinga = ` ${latensie.toFixed(4)}`
-                XeonBotInc.sendMessage(m.chat, {
-        image: fs.readFileSync('./VenoxGallery/theme/kannabot.jpg'),
-        caption: pinga,
-        contextInfo: {
-            externalAdReply: {
-                showAdAttribution: false,
-                title: botname,
-                sourceUrl: global.link,
-                body: `${global.owner}`
-            }
-        }
-    }, {
-      quoted: m
-                })
-                break
+case 'ping2': case 'p2': {
+   m.replygcxeon(`Ahh!! Wait ${pushname} Lactency...🚀️`)
+   let cp = require('child_process')
+   let { promisify } = require('util')
+   let exec = promisify(cp.exec).bind(cp)
+ let o
+ try {
+ o = await exec('python speed.py')
+ } catch (e) {
+ o = e
+} finally {
+let { stdout, stderr } = o
+if (stdout.trim()) m.reply(stdout)
+if (stderr.trim()) m.reply(stderr)
+   }
+   }
+   break
+   case 'update':
+  if (!isCreator) return m.reply('This command is only for my owner');
+  
+  try {
+    let commits = await DB.syncgit();
+
+    if (commits.total === 0) {
+      m.reply(`Hey ${m.pushName}. You have the latest version installed.`);
+    } else {
+      let update = await DB.sync();
+      let buttonMessaged = {
+        text: update,
+        footer: 'UPDATER',
+        headerType: 4
+      };
+      await XeonBotInc.sendMessage(m.chat, buttonMessaged);
+    }
+  } catch (error) {
+    // Handle errors if necessary
+    console.error(error);
+    replygcxeon('An error occurred while processing the command.');
+  }
+  break
         case 'unblock': case 'unban': {
 		if (!XeonTheCreator) return XeonStickOwner()
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
@@ -3386,7 +3408,7 @@ let search = await yts(text)
 url = search.videos[0].url
 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 eek = await getBuffer(anu.thumbnail)
-owned = `${global.ownernumber}@s.whatsapp.net`
+owned = `${ownernumber}@s.whatsapp.net`
 ngen = `
 🏮 Title : ${anu.title}
 
@@ -3502,6 +3524,12 @@ await XeonStickWait()
 downloadMp3(text)
 }
 break  
+case 'gcsetting':
+if (!m.isGroup) return m.reply('ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ɪɴ ɢʀᴏᴜᴘ ❌')
+if (!isAdmins) return m.reply('Tʜɪs ꜰᴇᴀᴛᴜʀᴇ ɪs ᴏɴʟʏ ꜰᴏʀ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs')
+    const options = ['linkgc', 'tagall', 'revoke'];
+    XeonBotInc.sendPoll(m.chat, 'Select your preferences:', options);
+break
 case 'getcase':
 if (!XeonTheCreator) return XeonStickOwner()
 const getCase = (cases) => {
