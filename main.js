@@ -216,7 +216,7 @@ await XeonBotInc.readMessages([kay.key]) }
 if (!XeonBotInc.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
 if (kay.key.id.startsWith('BAE5') && kay.key.id.length === 16) return
 const m = smsg(XeonBotInc, kay, store)
-require('./XeonCheems9')(XeonBotInc, m, chatUpdate, store)
+require('./kanna')(XeonBotInc, m, chatUpdate, store)
 } catch (err) {
 console.log(err)}})
 
