@@ -1,47 +1,3 @@
-/**
-
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-//                                                                                                                                      //
-//                                           ＷＨＡＴＳＡＰＰ  -  ＢＯＴ                                        //
-//                                                                                                                                           // 
-//                                                     Ｖ：１．０．１                                                                  // 
-//                                                                                                                                                                                                                                                                       //
-//                                                                                                                                                                                                                                                                          //                   
-//               ██╗░░██╗░█████╗░███╗░░██╗███╗░░██╗░█████╗░░░░░░░███╗░░░███╗██████╗░              //
-//               ██║░██╔╝██╔══██╗████╗░██║████╗░██║██╔══██╗░░░░░░████╗░████║██╔══██╗              //
-//               █████═╝░███████║██╔██╗██║██╔██╗██║███████║█████╗██╔████╔██║██║░░██║            //
-//               ██╔═██╗░██╔══██║██║╚████║██║╚████║██╔══██║╚════╝██║╚██╔╝██║██║░░██║           //
-//               ██║░╚██╗██║░░██║██║░╚███║██║░╚███║██║░░██║░░░░░░██║╚██╔╝██║██║░░██║             //
-//               ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░░╚══╝╚═╝░░╚═╝░░░░░░╚═╝░░░░░╚═╝╚═════╝░              //
-//                                                                                                                                                                                                                                                                                                                                    //
-//                                                                 @ BY : VENOX-OFFICIAL                                     //
-//                                                                                                      //
-//══════════════════════════════════════════════════════════════════════════════════════════════════════//
-
-CURRENTLY RUNNING ON TEST VERSION!!
-*
-   * @project_name : Kanna-MD
-   * @author : Venox-Official
-   * @github: https://github.com/V-E-N-O-X
-   * @description : Kanna-MD ,A lightweight multidevice whatsapp userbot .
-   * @version 1.0.1
-*
-   * Licensed under the Apacha 2.0 ;
-* 
-   * Created By DGXeon
-   * Updated By Venox-Official
-   * © 2024 Kanna-MD.
-* 
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
- **/
-
-
 require('./settings')
 const { modul } = require('./module');
 const moment = require('moment-timezone');
@@ -105,7 +61,7 @@ const store = makeInMemoryStore({
     })
 })
 
-let phoneNumber = "8801853262586"
+let phoneNumber = "8801975492880"
 let owner = JSON.parse(fs.readFileSync('./database/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
@@ -153,18 +109,18 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("WhatsApp Number, Example : +8801853262586")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +8801975492880")))
             process.exit(0)
          }
       } else {
-         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`WhatsApp number 😍\nFor example: +8801853262586 : `)))
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +8801975492880 : `)))
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          // Ask again when entering the wrong number
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("WhatsApp Number, Example : +8801853262586")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +8801975492880")))
 
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`WhatsApp number 😍\nFor example: +8801853262586 : `)))
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +8801975492880 : `)))
             phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
             rl.close()
          }
@@ -213,12 +169,12 @@ try{
 		}
 		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
 			console.log(color(` `,'magenta'))
-            console.log(color(`🎀 Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
+            console.log(color(`🏮Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
 			await delay(1999)
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(color(`< ================================================== >`, 'cyan'))
-	        console.log(color(`\n${themeemoji} YT CHANNEL: Slasher`,'magenta'))
-            console.log(color(`${themeemoji} GITHUB: V-E-N-O-X `,'magenta'))
+	        console.log(color(`\n${themeemoji} YT CHANNEL: Infinite9452`,'magenta'))
+            console.log(color(`${themeemoji} GITHUB: VenoxSenpai `,'magenta'))
             console.log(color(`${themeemoji} INSTAGRAM: @sla.sher_ `,'magenta'))
             console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
@@ -260,7 +216,7 @@ await XeonBotInc.readMessages([kay.key]) }
 if (!XeonBotInc.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
 if (kay.key.id.startsWith('BAE5') && kay.key.id.length === 16) return
 const m = smsg(XeonBotInc, kay, store)
-require('./kanna.js')(XeonBotInc, m, chatUpdate, store)
+require('./XeonCheems9')(XeonBotInc, m, chatUpdate, store)
 } catch (err) {
 console.log(err)}})
 
@@ -276,32 +232,32 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 			if (res.announce == true) {
 				await sleep(2000)
 				XeonBotInc.sendMessage(res.id, {
-					text: `「 Gʀᴏᴜᴘ sᴇᴛᴛɪɴɢ ᴄʜᴀɴɢᴇ 」\n\nGʀᴏᴜᴘ ʜᴀs ʙᴇᴇɴ ᴄʟᴏsᴇᴅ ʙʏ ᴀᴅᴍɪɴ, Nᴏᴡ ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ sᴇɴᴅ ᴍᴇssᴀɢᴇs !`,
+					text: `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admins can send messages !`,
 				});
 			} else if (res.announce == false) {
 				await sleep(2000)
 				XeonBotInc.sendMessage(res.id, {
-					text: `「 Gʀᴏᴜᴘ sᴇᴛᴛɪɴɢ ᴄʜᴀɴɢᴇ 」\n\nTʜᴇ ɢʀᴏᴜᴘ ʜᴀs ʙᴇᴇɴ ᴏᴘᴇɴᴇᴅ ʙʏ ᴀᴅᴍɪɴ, Nᴏᴡ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛs ᴄᴀɴ sᴇɴᴅ ᴍᴇssᴀɢᴇs !`,
+					text: `「 Group Settings Change 」\n\nThe group has been opened by admin, Now participants can send messages !`,
 				});
 			} else if (res.restrict == true) {
 				await sleep(2000)
 				XeonBotInc.sendMessage(res.id, {
-					text: `「 Gʀᴏᴜᴘ sᴇᴛᴛɪɴɢ ᴄʜᴀɴɢᴇ 」\n\nGʀᴏᴜᴘ ɪɴғᴏ ʜᴀs ʙᴇᴇɴ ʀᴇsᴛʀɪᴄᴛᴇᴅ, Nᴏᴡ ᴏɴʟʏ ᴀᴅᴍɪɴ ᴄᴀɴ ᴇᴅɪᴛ ɢʀᴏᴜᴘ ɪɴғᴏ !`,
+					text: `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`,
 				});
 			} else if (res.restrict == false) {
 				await sleep(2000)
 				XeonBotInc.sendMessage(res.id, {
-					text: `「 Gʀᴏᴜᴘ sᴇᴛᴛɪɴɢ ᴄʜᴀɴɢᴇ 」\n\nGʀᴏᴜᴘ ɪɴғᴏ ʜᴀs ʙᴇᴇɴ ᴏᴘᴇɴᴇᴅ, Nᴏᴡ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛs ᴄᴀɴ ᴇᴅɪᴛ ɢʀᴏᴜᴘ ɪɴғᴏ !`,
+					text: `「 Group Settings Change 」\n\nGroup info has been opened, Now participants can edit group info !`,
 				});
 			} else if(!res.desc == ''){
 				await sleep(2000)
 				XeonBotInc.sendMessage(res.id, { 
-					text: `「 Gʀᴏᴜᴘ sᴇᴛᴛɪɴɢ ᴄʜᴀɴɢᴇ 」\n\n*Gʀᴏᴜᴘ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ʜᴀs ʙᴇᴇɴ ᴄʜᴀɴɢᴇᴅ ᴛᴏ*\n\n${res.desc}`,
+					text: `「 Group Settings Change 」\n\n*Group description has been changed to*\n\n${res.desc}`,
 				});
       } else {
 				await sleep(2000)
 				XeonBotInc.sendMessage(res.id, {
-					text: `「 Gʀᴏᴜᴘ sᴇᴛᴛɪɴɢ ᴄʜᴀɴɢᴇ 」\n\n*Gʀᴏᴜᴘ ɴᴀᴍᴇ ʜᴀs ʙᴇᴇɴ ᴄʜᴀɴɢᴇᴅ ᴛᴏ*\n\n*${res.subject}*`,
+					text: `「 Group Settings Change 」\n\n*Group name has been changed to*\n\n*${res.subject}*`,
 				});
 			} 
 			
@@ -327,70 +283,12 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 memb = metadata.participants.length
 XeonWlcm = await getBuffer(ppuser)
 XeonLft = await getBuffer(ppuser)
-                if (anu.action == 'add') {
-                const xeonbuffer = await getBuffer(ppuser)
-                let xeonName = num
-                const xtime = moment.tz('Asia/Dhaka').format('HH:mm:ss')
-	            const xdate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY')
-	            const xmembers = metadata.participants.length
-                xeonbody = `┌─❖
-│『  *Hi..!! 🐦*  』
-└┬
-    ◎ 「  @${xeonName.split("@")[0]}  」
-    │ ➪  *Wᴇʟᴄᴏᴍᴇ Tᴏ*
-    ◎      ${metadata.subject} 
-    │ ➪  *Mᴇᴍʙᴇʀ :*
-    ◎      ${xmembers}th 
-    │ ➪   *Jᴏɪɴᴇᴅ :*
-    ◎      ${xtime} ${xdate}
-    └─────────────||`
-XeonBotInc.sendMessage(anu.id,
- { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonWlcm,
-"sourceUrl": `${wagc}`}}})
-                } else if (anu.action == 'remove') {
-                	const xeonbuffer = await getBuffer(ppuser)
-                    const xeontime = moment.tz('Asia/Dhaka').format('HH:mm:ss')
-	                const xeondate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY')
-                	let xeonName = num
-                    const xeonmembers = metadata.participants.length
-                    xeonbody = `┌─❖
-│『  *Gᴏᴏᴅʙʏᴇ..!! 🍁*  』
-└┬
-    ◎ 「 @${xeonName.split("@")[0]}  」
-    │ ➪  *Lᴇғᴛ ғʀᴏᴍ*
-    ◎      ${metadata.subject} 
-    │ ➪  *Mᴇᴍʙᴇʀ :*
-    ◎      ${xeonmembers}th
-    │ ➪   *Tɪᴍᴇ :*
-    ◎      ${xeontime} ${xeondate}
-    └─────────────||`
-XeonBotInc.sendMessage(anu.id,
- { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonLft,
-"sourceUrl": `${wagc}`}}})
-} else if (anu.action == 'promote') {
+               if (anu.action == 'promote') {
 const xeonbuffer = await getBuffer(ppuser)
 const xeontime = moment.tz('Asia/Dhaka').format('HH:mm:ss')
 const xeondate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY')
 let xeonName = num
-xeonbody = ` *Cᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴs!* 🎉 @${xeonName.split("@")[0]}, ʏᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ *ᴘʀᴏᴍᴏᴛᴇᴅ* ᴛᴏ *ᴀᴅᴍɪɴ* 🥳`
+xeonbody = ` *Cᴏɴɢᴏ!✨ @${xeonName.split("@")[0]}, Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴘʀᴏᴍᴏᴛᴇᴅ ᴛᴏ Aᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ* `
    XeonBotInc.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
@@ -408,7 +306,7 @@ const xeonbuffer = await getBuffer(ppuser)
 const xeontime = moment.tz('Asia/Dhaka').format('HH:mm:ss')
 const xeondate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY')
 let xeonName = num
-xeonbody = ` *Oᴘᴘs!*️ @${xeonName.split("@")[0]}, ʏᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ *ᴅᴇᴍᴏᴛᴇᴅ* ғʀᴏᴍ *ᴀᴅᴍɪɴ* 😬`
+xeonbody = `*Aww! 😓 @${xeonName.split("@")[0]}, Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴅᴇᴍᴏᴛᴇᴅ ғʀᴏᴍ Aᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ..!*`
 XeonBotInc.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
@@ -435,7 +333,7 @@ console.log(err)
             return msg?.message
         }
         return {
-            conversation: "*Ohayo!* _Kanna-MD is here_!"
+            conversation: "Kanna-MD is here!"
         }
     }
     XeonBotInc.ev.on('messages.update', async chatUpdate => {
@@ -678,8 +576,8 @@ const tod = generateWAMessageFromContent(jid,
 "productId": "9999",
 "title": title,
 "description": desc,
-"currencyCode": "BDT",
-"priceAmount1000": "6900",
+"currencyCode": "USD",
+"priceAmount1000": "100",
 "url": `${websitex}`,
 "productImageCount": 1,
 "salePriceAmount1000": "0"
@@ -835,10 +733,10 @@ XeonBotInc.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
 	const requestPaymentMessage = { amount: {
             currencyCode: currency || 'USD',
             offset: 0,
-            value: amount || 4.99
+            value: amount || 9.99
         },
         expiryTimestamp: 0,
-        amount1000: (amount || 4.99) * 1000,
+        amount1000: (amount || 9.99) * 1000,
         currencyCodeIso4217: currency || 'USD',
         requestFrom: from || '0@s.whatsapp.net',
         noteMessage: {

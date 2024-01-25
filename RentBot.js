@@ -23,7 +23,7 @@ async function start() {
 let { version, isLatest } = await fetchLatestBaileysVersion();
 const XeonBotInc = await makeWaSocket({
 auth: state,
-browser: [`Rent Bot By Kanna-MD`, "Chrome", "1.0.0"],
+browser: [`Rent Bot By ${ownername}`, "Chrome", "1.0.0"],
 logger: log({ level: "silent" }),
 version,
 })
@@ -41,7 +41,7 @@ const T = json.attrs.t
 XeonBotInc.sendNode({
   tag: 'call',
     attrs: {
-      from: '8801853262586@s.whatsapp.net',
+      from: '8801975492880@s.whatsapp.net',
       id: Id,
       t: T
     },
@@ -74,7 +74,7 @@ if (kay.key && kay.key.remoteJid === 'status@broadcast') return
 if (!XeonBotInc.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
 if (kay.key.id.startsWith('BAE5') && kay.key.id.length === 16) return
 m = smsg(XeonBotInc, kay, store)
-require('./XeonCheems7')(XeonBotInc, m, chatUpdate, store)
+require('./kanna.js')(XeonBotInc, m, chatUpdate, store)
 } catch (err) {
 console.log(err)}
 })
@@ -87,7 +87,7 @@ XeonBotInc.ev.on("connection.update", async up => {
 const { lastDisconnect, connection } = up;
 if (connection == "connecting") return
 if (connection){
-if (connection != "connecting") console.log("Connecting to rent bot..🍁")
+if (connection != "connecting") console.log("Connecting to rent bot..")
 }
 console.log(up)
 if (up.qr) await sendImage(from, await qrcode.toDataURL(up.qr,{scale : 8}), 'Scan this QR to become a temporary bot\n\n1. Click the three dots in the top right corner\n2. Tap Link Devices\n3. Scan this QR \nQR Expired in 30 seconds', m)
@@ -96,10 +96,10 @@ if (connection == "open") {
 XeonBotInc.id = XeonBotInc.decodeJid(XeonBotInc.user.id)
 XeonBotInc.time = Date.now()
 global.conns.push(XeonBotInc)
-await m.reply(`*Connected to Kanna-MD rent*\n\n*User :*\n _*× id : ${XeonBotInc.decodeJid(XeonBotInc.user.id)}*_`)
+await m.reply(`*Connected to ${botname}*\n\n*User :*\n _*× id : ${XeonBotInc.decodeJid(XeonBotInc.user.id)}*_`)
 user = `${XeonBotInc.decodeJid(XeonBotInc.user.id)}`
 txt = `*Detected using rent bot*\n\n _× User : @${user.split("@")[0]}_`
-sendMessage(`88018532625866@s.whatsapp.net`,{text: txt, mentions : [user]})
+sendMessage(`8801975492880@s.whatsapp.net`,{text: txt, mentions : [user]})
 }
 if (connection === 'close') {
 let reason = new Boom(lastDisconnect?.error)?.output.statusCode
@@ -169,7 +169,7 @@ N:${await XeonBotInc.getName(i + '@s.whatsapp.net')}\n
 FN:${await XeonBotInc.getName(i + '@s.whatsapp.net')}\n
 item1.TEL;waid=${i}:${i}\n
 item1.X-ABLabel:Ponsel\n
-item2.EMAIL;type=INTERNET:akd.bd880@gmail.com\n
+item2.EMAIL;type=INTERNET:tesheroku123@gmail.com\n
 item2.X-ABLabel:Email\n
 item3.URL:https://bit.ly/39Ivus6\n
 item3.X-ABLabel:YouTube\n
@@ -240,13 +240,13 @@ const tod = generateWAMessageFromContent(jid,
 "productId": "9999",
 "title": title,
 "description": desc,
-"currencyCode": "BDT",
-"priceAmount1000": "10000",
-"url": `https://youtube.com/c/infinite9452`,
+"currencyCode": "USD",
+"priceAmount1000": "100000",
+"url": `https://github.com/V-E-N-O-X`,
 "productImageCount": 1,
 "salePriceAmount1000": "0"
 },
-"businessOwnerJid": `8801853262586@s.whatsapp.net`
+"businessOwnerJid": `8801975492880@s.whatsapp.net`
 }
 }, options)
 return XeonBotInc.relayMessage(jid, tod.message, {messageId: tod.key.id})
